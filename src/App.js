@@ -11,37 +11,6 @@ import GithubState from "./context/github/Githubstate";
 import AlertState from "./context/Alert/alertState";
 
 const App = () => {
-  // const [alert, setAlert] = useState(null);
-
-  //load component by default
-  // useEffect(() => {
-  //     setLoading(true);
-  //     const getdata =  async ()=> {
-  //       const {res} = axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
-  //     setUsers(res.data);
-  //     setLoading(false);
-  //   }
-  //   getdata()
-  //   }, []);
-  // useEffect(() => {
-  //   setLoading(true);
-  //       const res =  axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
-  //       setUsers(res.data.items);
-  //       setLoading(false);
-  // }, []);
-
-  // useEffect(
-  //   (async () => {
-  //     setLoading(true);
-  //     const res = await axios.get(
-  //       `https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
-  //     );
-  //     setUsers(res.data);
-  //     setLoading(false);
-  //   })(),
-  //   []
-  // );
-
   return (
     <GithubState>
       <AlertState>
