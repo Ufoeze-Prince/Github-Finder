@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# GitHub Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React single-page app for searching GitHub users and viewing their profiles and latest repositories, using the public GitHub REST API.
 
-## Available Scripts
+I built this to practise React hooks, the Context API and client-side routing.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Search GitHub users by name or username
+- View a user's profile details on a dedicated page
+- See the user's five most recent repositories
+- Clear search results with one click
+- Alert messages for empty searches and users that are not found
+- About page and a custom 404 page
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tech stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **React 17** with functional components and hooks
+- **Context API + useReducer** for global state (GitHub data and alerts)
+- **React Router** for page navigation
+- **Axios** for API requests
+- **SweetAlert2** for pop-up messages
+- **GitHub REST API** as the data source
 
-### `npm test`
+## Project structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+src/
+├── App.js                 # Routes and context providers
+├── componets/
+│   ├── layout/            # Navbar, Alert
+│   ├── pages/             # Home, About, Notfound
+│   └── users/             # User profile and search components
+└── context/
+    ├── github/            # GitHub state, reducer and context
+    └── Alert/             # Alert state and context
+```
 
-### `npm run build`
+## Getting started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Requirements
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js and npm
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+```bash
+git clone https://github.com/Ufoeze-Prince/Github-Finder.git
+cd Github-Finder
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Environment variables
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Create a file named `.env.local` in the project root:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+REACT_APP_GITHUB_CLIENT_ID=your_client_id
+REACT_APP_GITHUB_CLIENT_SECRET=your_client_secret
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You can create these by registering an OAuth app in your GitHub developer settings.
 
-## Learn More
+### Run the app
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The app opens at `http://localhost:3000`.
 
-### Code Splitting
+## What I learned
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Managing shared state with the Context API and reducers instead of passing props through many components
+- Working with a third-party REST API and handling loading and empty states
+- Structuring a React project into layout, page and feature components
 
-### Analyzing the Bundle Size
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Ufoeze Prince** — [GitHub](https://github.com/Ufoeze-Prince)
